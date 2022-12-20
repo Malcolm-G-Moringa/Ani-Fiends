@@ -8,6 +8,23 @@ const SEASON_NOW = "https://api.jikan.moe/v4/seasons/now";
 // HTML ROWS
 const seasonRow = document.querySelector('#season-container div.row');
 
+// Login page
+// Variable for login form
+const loginForm = document.querySelector('.loginBox form');
+
+// add event listener to form
+loginForm.addEventListener('submit',e=>{
+  e.preventDefault();
+  const username = e.target.querySelector('#uname').value;
+  const password = e.target.querySelector('#pass').value;
+
+  if(username !='' && pass != ''){
+    document.querySelector('#home').removeAttribute('hidden');
+    document.querySelector('#login-page').setAttribute('hidden','');
+    document.querySelector('#login-style').remove();
+  }
+})
+
 fetch(SEASON_NOW)
 .then(resp=>resp.json())
 .then(data=>initSeason(data.data))
