@@ -45,6 +45,9 @@ document.querySelector('#navbar form').addEventListener('submit',e=>{
   searchAnime(animeName);
 })
 
+// Add events to navbar
+addNavEvents();
+
 fetch(SEASON_NOW)
 .then(resp=>resp.json())
 .then(data=>initSeason(data.data))
@@ -57,6 +60,7 @@ fetch(RECOMMEND)
 })
 
 function initSeason(data){
+  seasonRow.innerHTML = "";
   for(let anime of data){
     showSeasonal(anime);
   }
@@ -215,5 +219,35 @@ function showAnime(data){
 }
 
 function addNavEvents(){
-  navbar.querySelector()
+  navbar.querySelector('div a').addEventListener('click',e=>{
+    hideElements(oneAnime);
+    showElements(recommendContainer,seasonContainer,pageFooter);
+  })
+  navbar.querySelector('#seasonal-link').addEventListener('click',e=>{
+    hideElements(oneAnime);
+    showElements(recommendContainer,seasonContainer,pageFooter);
+    fetch(SEASON_NOW)
+    .then(resp=>resp.json())
+    .then(data=>{
+      document.querySelector('#season-container h2').textContent = "This Season's Anime"
+      initSeason(data.data);
+    })
+  })
+  navbar.querySelector('#top-link').addEventListener('click',e=>{
+    hideElements(oneAnime);
+    showElements(recommendContainer,seasonContainer,pageFooter);
+    fetch('https://api.jikan.moe/v4/top/anime')
+    .then(resp=>resp.json())
+    .then(data=>{
+      document.querySelector('#season-container h2').textContent = "Top Anime"
+      initSeason(data.data);
+    })
+  })
+  navbar.querySelector('#random-link').addEventListener('click',e=>{
+    fetch('https://api.jikan.moe/v4/random/anime')
+    .then(resp=>resp.json())
+    .then(data=>{
+      showAnime(data.data)
+    })
+  })
 }
