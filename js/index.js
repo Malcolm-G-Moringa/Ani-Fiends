@@ -5,10 +5,19 @@ const print = data=>console.log(data);
 const RECOMMEND = "https://api.jikan.moe/v4/recommendations/anime";
 const SEASON_NOW = "https://api.jikan.moe/v4/seasons/now";
 
+// HTML CONTAINERS
+const loginPage = document.querySelector('#login-page');
+const navbar = document.querySelector('#navbar');
+const recommendContainer = document.querySelector('#recommendations-container');
+const seasonContainer = document.querySelector('#season-container');
+const pageFooter = document.querySelector('#page-footer');
+
+
 // HTML ROWS
 const seasonRow = document.querySelector('#season-container div.row');
 
-// Login page
+// Login page authentication
+hideElements(navbar,recommendContainer,seasonContainer,pageFooter);
 // Variable for login form
 const loginForm = document.querySelector('.loginBox form');
 
@@ -17,11 +26,14 @@ loginForm.addEventListener('submit',e=>{
   e.preventDefault();
   const username = e.target.querySelector('#uname').value;
   const password = e.target.querySelector('#pass').value;
-
-  if(username !='' && pass != ''){
-    document.querySelector('#home').removeAttribute('hidden');
-    document.querySelector('#login-page').setAttribute('hidden','');
+  if(username == '' || password == ''){
+    alert('Please input values in the fields below');
+  }
+  else{
+    hideElements(loginPage)
     document.querySelector('#login-style').remove();
+    showElements(navbar,recommendContainer,seasonContainer,pageFooter);
+
   }
 })
 
@@ -130,4 +142,18 @@ function initRecommend(data){
     }
   }
 
+}
+
+function hideElements(...items){
+  items.forEach(item=>{
+    print(item)
+    item.setAttribute('hidden','');
+  })
+}
+
+function showElements(...items){
+  items.forEach(item=>{
+    print(item)
+    item.removeAttribute('hidden');
+  })
 }
