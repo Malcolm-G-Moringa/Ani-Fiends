@@ -3,6 +3,11 @@
 ## Description
 This project is a web app named **Ani-Fiend**,an anime application that can be used to viewthe current season's airing anime and the current top anime. One can also use it to find random animes.The app is created to satisfy a project for Moringa School.
 
+## Technologies Used
+Notable technologies used in this project include:
+- [Bootstrap](https://getbootstrap.com/)
+- [jikan api](https://jikan.moe/)
+
 ## Project Setup
 ### Getting Started
 In order for you to use the content on this repo ensure you have the following:
