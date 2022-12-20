@@ -75,8 +75,6 @@ function initRecommend(data){
   prevBtn.addEventListener('click',e=>{
     if(animesValue>0){
       --animesValue;
-      print(animesValue);
-      print(currentAnime)
       showRecommend();
     }
   })
@@ -84,8 +82,6 @@ function initRecommend(data){
   nextBtn.addEventListener('click',e=>{
     if(animesValue<animes.length){
       ++animesValue;
-      print(animesValue);
-      print(animes[animesValue].entry[0])
       showRecommend();
     }
   });
@@ -100,16 +96,20 @@ function initRecommend(data){
     .then(data=>displayRecommend(data.data))
 
     function displayRecommend(anime){
-      // print(anime)
-      // select the elements to show recommendimage and title
+      print(anime)
+      // select the elements to show recommend details
       const recommendImg = document.querySelector('.recommend-img');
       const recommendTitle = document.querySelector('#recommend-title');
+      const recommendSynopsis = document.querySelector('#recommend-synopsis');
       
       // show recommend image
       recommendImg.src = anime.images.webp.image_url;
 
       // show recommend title
       recommendTitle.textContent = animes[animesValue].entry[0].title;
+
+      // show recommend synopsis
+      recommendSynopsis.textContent = anime.synopsis
     }
   }
 

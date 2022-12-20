@@ -97,14 +97,14 @@ p{
     background-color: black;
     margin: 0rem;
     overflow: hidden;
-  } */
+} */
 
-  .recommend-img{
-    max-width: 600px;
-    object-fit: contain;
-    width: 100%;
+.recommend-img{
+    object-fit: cover;
+    /* width: 100%; */
     height: 100%;
-  }
+    background-color: rgb(90, 90, 90);
+}
 
 svg rect {
     fill: blue;
@@ -124,6 +124,19 @@ svg rect:hover {
     background: linear-gradient(from top, rgb(70, 70, 70), rgb(225, 225, 225));
 }
 
+/* #recommendations-container div.card{
+    height: 150px;
+}
+
+#recommendations-container div.card .row{
+    height: 100px;
+} */
+
+#recommend-img-div{
+    /* height: 300px; */
+    padding: 0;
+}
+
 /* Adds a separator line after recommendations-container thatonly takes up half the screen width */
 /* #recommendations-container:after {
     content: "";
@@ -135,9 +148,6 @@ svg rect:hover {
     border-bottom: 5px double rgb(0, 0, 0);
 } */
 
-#recommend-img-div{
-    padding:0;
-}
 
 body{
 
@@ -152,7 +162,7 @@ body{
     margin-right: 150px;
 }
 #season-container div.card{
-    width: 310px;
+    width: 300px;
 }
 
 #season-container div div{
@@ -164,7 +174,7 @@ body{
     height: 100%;
 }
 
-#season-container .card-title{
+#season-container h4.card-title{
     min-height: 4.5em;
 }
 
