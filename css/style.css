@@ -19,7 +19,7 @@
     /* Add the highlight */
     box-shadow: 0px 0px 5px black;
     /* Add the gradient effect */
-    background: linear-gradient(from top, rgb(70, 70, 70), rgb(225, 225, 225));
+    background: linear-gradient(120deg, rgb(104, 104, 104) 0%, rgb(176, 176, 176) 25%, rgb(208, 208, 208) 100%);
 }
 
 #recommend-img-div{
