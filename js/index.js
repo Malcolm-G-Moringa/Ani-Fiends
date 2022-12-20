@@ -17,26 +17,26 @@ const oneAnime = document.querySelector('#one-anime');
 const seasonRow = document.querySelector('#season-container div.row');
 
 // Login page authentication
-// hideElements(navbar,recommendContainer,seasonContainer,pageFooter);
+hideElements(navbar,recommendContainer,seasonContainer,pageFooter);
 
 // Variable for login form
 const loginForm = document.querySelector('.loginBox form');
 
 // add event listener to form
-// loginForm.addEventListener('submit',e=>{
-//   e.preventDefault();
-//   const username = e.target.querySelector('#uname').value;
-//   const password = e.target.querySelector('#pass').value;
-//   if(username == '' || password == ''){
-//     alert('Please input values in the fields below');
-//   }
-//   else{
-//     hideElements(loginPage)
-//     document.querySelector('#login-style').remove();
-//     showElements(navbar,recommendContainer,seasonContainer,pageFooter);
+loginForm.addEventListener('submit',e=>{
+  e.preventDefault();
+  const username = e.target.querySelector('#uname').value;
+  const password = e.target.querySelector('#pass').value;
+  if(username == '' || password == ''){
+    alert('Please input values in the fields below');
+  }
+  else{
+    hideElements(loginPage)
+    document.querySelector('#login-style').remove();
+    showElements(navbar,recommendContainer,seasonContainer,pageFooter);
 
-//   }
-// })
+  }
+})
 
 // Add event listener to search field
 document.querySelector('#navbar form').addEventListener('submit',e=>{
@@ -210,6 +210,9 @@ function showAnime(data){
 
   // hide elements
   hideElements(recommendContainer,seasonContainer,pageFooter);
+
+  // show element
+  showElements(oneAnime);
 
   // append card to season row
   oneAnime.innerHTML = "";

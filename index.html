@@ -106,7 +106,7 @@ p{
 </head>
 <body>
     <div id="login-page" class="loginBox">
-        <img class="user" src="" alt="Character Image" height="100px" width="100px">
+        <img class="user" src="./test_images/wallhaven-73dvz3_100x100.png" alt="Character Image" height="100px" width="100px">
         <h3>Sign In</h3>
         <form action="#">
             <div class="inputBox">
@@ -117,78 +117,74 @@ p{
         </form> 
     </div>
 
-    <div id="home" hidden>
-        <nav class="navbar bg-dark">
-            <div class="container-fluid d-flex">
-                <a href="#" class="navbar-brand text-light me-0">ANI-FIEND</a>
+    <nav id="navbar" class="navbar bg-dark">
+        <div class="container-fluid d-flex">
+            <a href="#" class="navbar-brand text-light me-0">ANI-FIEND</a>
+
+            <ul class="navbar-nav mx-auto d-flex flex-row justify-content-center">
+                <li class="nav-item me-5">
+                    <a id="seasonal-link" class="nav-link text-light" href="#">SEASONAL</a>
+                </li>
+                <li class="nav-item mx-5">
+                    <a id="top-link" class="nav-link text-light" href="#">TOP</a>
+                </li>
+                <li class="nav-item mx-5">
+                    <a id="random-link" class="nav-link text-light" href="#">RANDOM</a>
+                </li>
+            </ul>
     
-                <ul class="navbar-nav mx-auto d-flex flex-row justify-content-center">
-                    <li class="nav-item me-5">
-                        <a id="category-link" class="nav-link text-light" href="#">MY LIST</a>
-                    </li>
-                    <li class="nav-item mx-5">
-                        <a id="countries-link" class="nav-link text-light" href="#">RECOMMENDATIONS</a>
-                    </li>
-                    <li class="nav-item mx-5">
-                        <a id="countries-link" class="nav-link text-light" href="#">RANDOM</a>
-                    </li>
-                </ul>
+            <form class="d-flex">
+                <input class="form-control" type="search" placeholder="Search">
+                <button id="searchBtn" class="btn btn-outline-info ms-2">SEARCH</button>
+            </form>
+
+        </div>
+    </nav>
+
+    <div id="recommendations-container" class="container-fluid justify-content-center mt-0">
         
-                <form class="d-flex">
-                    <input class="form-control" type="search" placeholder="Search">
-                    <button id="searchBtn" class="btn btn-outline-info ms-2">SEARCH</button>
-                </form>
-    
+        <div class="row">
+            <h2 class="card-title text-center my-3">Recommendations</h2>
+
+            <div id="prev-recommend" class="col d-flex justify-content-end align-items-center">
+                <button>Prev</button>
             </div>
-        </nav>
-    
-        <div id="recommendations-container" class="container-fluid justify-content-center mt-0">
-            
-            <div class="row">
-                <h2 class="card-title text-center my-3">Recommendations</h2>
-    
-                <div id="prev-recommend" class="col d-flex justify-content-end align-items-center">
-                    <button>Prev</button>
-                </div>
-    
-                <div class="card col-10 mx-auto mb-5">
-                    <div class="row">
-                        <div id="recommend-img-div" class="col-2">
-                            <img class="recommend-img" alt="">
-                        </div>
-                        <div class="col-8 card-body">
-                            <h2 id="recommend-title" class="card-title text-center">A robo-cat</h2>
-                            <p id="recommend-synopsis">stuff</p>
-                        </div>
+
+            <div class="card col-10 mx-auto mb-5">
+                <div class="row">
+                    <div id="recommend-img-div" class="col-2">
+                        <img class="recommend-img" alt="">
+                    </div>
+                    <div class="col-8 card-body">
+                        <h2 id="recommend-title" class="card-title text-center">A robo-cat</h2>
+                        <p id="recommend-synopsis">stuff</p>
                     </div>
                 </div>
-    
-                <div id="next-recommend" class="col d-flex align-items-center justify-content-start">
-                    <button>Next</button>
-                </div>
             </div>
-            
-        </div>
-    
-        <div id="season-container" class="container-fluid mt-0 ">
-            <h2 class="card-title text-center my-3">This Season's Anime</h2>
-            <div class="row d-flex flex-wrap justify-content-between">
-                <!-- <div class="card my-5">
-                    <img src="./test_images/oni_sword.jpg" alt="sword girl" class="card-img-top">
-                    <h4 class="card-title">Sword girl</h4>
-                </div> -->
-    
+
+            <div id="next-recommend" class="col d-flex align-items-center justify-content-start">
+                <button>Next</button>
             </div>
         </div>
-    
-        <footer class="bg-dark text-light">
-            <div class="text-center p-3">
-                <a class="text-light" href="https://github.com/Malcolm-G-Moringa">Malcolm Githuka</a>
-                © 2022
-            </div>
-        </footer>
+        
+    </div>
+
+    <div id="season-container" class="container-fluid mt-0 ">
+        <h2 class="card-title text-center my-3">This Season's Anime</h2>
+        <div class="row d-flex flex-wrap justify-content-between"></div>
+    </div>
+
+    <div id="one-anime-container" class="container-fluid my-5 justify-content-center">
+        <div id="one-anime" class=""></div>
     </div>
     
+
+    <footer id="page-footer" class="bg-dark text-light">
+        <div class="text-center p-3">
+            <a class="text-light" href="https://github.com/Malcolm-G-Moringa">Malcolm Githuka</a>
+            © 2022
+        </div>
+    </footer>    
 
 </body>
 </html>
