@@ -11,12 +11,8 @@ In order for you to use the content on this repo ensure you have the following:
 - NPM
 
 ### Installation of application
-Installation of the application is required to use features such as the delete button and updating the number of tickets bought on the db.json file.
-
-  ***NB:* Make sure to install from the main branch**.
-
-
-The installation steps below are described for a linux machine.\
+Installation of the application is not necessary but if one wishes to, the steps are described below.
+The installation steps are described for a linux machine.\
 To use this repo on your machine requires some simple steps
 
 #### Alternative One (Cloning directly from my repository)
