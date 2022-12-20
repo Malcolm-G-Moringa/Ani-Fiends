@@ -63,13 +63,18 @@
 
 #one-anime div.card{
     max-width: 400px;
-    max-height:400px;
 }
 
 #one-anime img{
     object-fit: cover;
+    max-width: 400px;
+    max-height:400px;
     width: 100%;
     height: 100%;
+}
+
+#one-anime p{
+    max-width: fit-content;
 }
 
  

@@ -179,6 +179,7 @@ function searchAnime(name){
   })
 }
 function showAnime(data){
+  print(data)
   // Assign image and title data to variables
   const image = data.images.jpg.large_image_url;
   const title = data.title;
@@ -191,6 +192,11 @@ function showAnime(data){
   const cardBody = document.createElement('div');
   cardBody.classList = ('card-body');
 
+  // create card body for synopsis
+  const cardBody2 = document.createElement('div');
+  cardBody2.id = "synopsis-div"
+  cardBody2.classList = ('card-body');
+
   // create image element
   const imageElement = document.createElement('img');
   imageElement.classList = ('card-img-top');
@@ -202,11 +208,19 @@ function showAnime(data){
   cardTitle.classList = ('card-title text-center');
   cardTitle.textContent = title;
 
+  // create paragraph for synopsis
+  const cardSynopsis = document.createElement('p');
+  cardSynopsis.classList = ('text-center');
+  cardSynopsis.textContent = data.synopsis;
+
   // append title to cardBody
   cardBody.append(cardTitle);
 
+  // append synopsis to cardbody2
+  cardBody2.append(cardSynopsis);
+
   // append cardBody and image to card
-  card.append(imageElement,cardBody);
+  card.append(imageElement,cardBody,cardBody2);
 
   // hide elements
   hideElements(recommendContainer,seasonContainer,pageFooter);
