@@ -96,6 +96,11 @@ function showSeasonal(data){
   // append cardBody and image to card
   card.append(imageElement,cardBody);
 
+  // add event listener to card
+  card.addEventListener('click',e=>{
+    showAnime(data);
+  })
+
   // append card to season row
   seasonRow.append(card);
 }
