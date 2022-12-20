@@ -11,30 +11,38 @@ const navbar = document.querySelector('#navbar');
 const recommendContainer = document.querySelector('#recommendations-container');
 const seasonContainer = document.querySelector('#season-container');
 const pageFooter = document.querySelector('#page-footer');
-
+const oneAnime = document.querySelector('#one-anime');
 
 // HTML ROWS
 const seasonRow = document.querySelector('#season-container div.row');
 
 // Login page authentication
-hideElements(navbar,recommendContainer,seasonContainer,pageFooter);
+// hideElements(navbar,recommendContainer,seasonContainer,pageFooter);
+
 // Variable for login form
 const loginForm = document.querySelector('.loginBox form');
 
 // add event listener to form
-loginForm.addEventListener('submit',e=>{
-  e.preventDefault();
-  const username = e.target.querySelector('#uname').value;
-  const password = e.target.querySelector('#pass').value;
-  if(username == '' || password == ''){
-    alert('Please input values in the fields below');
-  }
-  else{
-    hideElements(loginPage)
-    document.querySelector('#login-style').remove();
-    showElements(navbar,recommendContainer,seasonContainer,pageFooter);
+// loginForm.addEventListener('submit',e=>{
+//   e.preventDefault();
+//   const username = e.target.querySelector('#uname').value;
+//   const password = e.target.querySelector('#pass').value;
+//   if(username == '' || password == ''){
+//     alert('Please input values in the fields below');
+//   }
+//   else{
+//     hideElements(loginPage)
+//     document.querySelector('#login-style').remove();
+//     showElements(navbar,recommendContainer,seasonContainer,pageFooter);
 
-  }
+//   }
+// })
+
+// Add event listener to search field
+document.querySelector('#navbar form').addEventListener('submit',e=>{
+  e.preventDefault();
+  const animeName = e.target.querySelector('input').value;
+  searchAnime(animeName);
 })
 
 fetch(SEASON_NOW)
@@ -156,4 +164,56 @@ function showElements(...items){
     print(item)
     item.removeAttribute('hidden');
   })
+}
+
+function searchAnime(name){
+  fetch(`https://api.jikan.moe/v4/anime?q="${name}"`)
+  .then(resp=>resp.json())
+  .then(data=>{
+    print(data);
+    showAnime(data.data[0]);
+  })
+}
+function showAnime(data){
+  // Assign image and title data to variables
+  const image = data.images.jpg.large_image_url;
+  const title = data.title;
+
+  // Create card element to put image and title
+  const card = document.createElement('div');
+  card.classList = ('card mx-auto mb-5');
+
+  // create card body element to put title
+  const cardBody = document.createElement('div');
+  cardBody.classList = ('card-body');
+
+  // create image element
+  const imageElement = document.createElement('img');
+  imageElement.classList = ('card-img-top');
+  imageElement.alt = title;
+  imageElement.src = image;
+
+  // create header for title
+  const cardTitle = document.createElement('h4');
+  cardTitle.classList = ('card-title text-center');
+  cardTitle.textContent = title;
+
+  // append title to cardBody
+  cardBody.append(cardTitle);
+
+  // append cardBody and image to card
+  card.append(imageElement,cardBody);
+
+  // hide elements
+  hideElements(recommendContainer,seasonContainer,pageFooter);
+
+  // append card to season row
+  oneAnime.innerHTML = "";
+  oneAnime.append(card);
+
+
+}
+
+function addNavEvents(){
+  navbar.querySelector()
 }
