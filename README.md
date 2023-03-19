@@ -26,7 +26,7 @@ To use this repo on your machine requires some simple steps
 - Clone the repo into your folder of choice by using the following:
 
 
-        git clone https://github.com/Malcolm-G-Moringa/Ani-Fiend.git
+        git clone https://github.com/Malcolm-G/Ani-Fiend.git
 
 - Change directory to the repo folder:
 
@@ -58,7 +58,7 @@ If you wish to run application from cloned repository:
 If you wish to access the application without cloning it to your computer,simply follow this simple step:
 - Access the website by going to the following link:
    
-                https://malcolm-g-moringa.github.io/Ani-Fiend/
+                https://ani-fiend-malcolm-g.vercel.app/
 
 
 ---
