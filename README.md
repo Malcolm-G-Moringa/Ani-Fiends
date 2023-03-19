@@ -60,6 +60,7 @@ If you wish to access the application without cloning it to your computer,simply
    
                 https://ani-fiend-malcolm-g.vercel.app/
 
+Once the application is open, simply type in any values in the username and password field (The login feature is simply a visual look) and you shall have access to the app.
 
 ---
 ## Authors
