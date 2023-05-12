@@ -12,12 +12,20 @@ const recommendContainer = document.querySelector('#recommendations-container');
 const seasonContainer = document.querySelector('#season-container');
 const pageFooter = document.querySelector('#page-footer');
 const oneAnime = document.querySelector('#one-anime');
+const fakePageText = document.querySelector('.fake-page-text');
 
 // HTML ROWS
 const seasonRow = document.querySelector('#season-container div.row');
 
 // Login page authentication
-hideElements(navbar,recommendContainer,seasonContainer,pageFooter);
+if(sessionStorage.getItem('login')){
+  hideElements(loginPage,fakePageText)
+  document.querySelector('#login-style').remove();
+  showElements(navbar,recommendContainer,seasonContainer,pageFooter);
+}
+else{
+  hideElements(navbar,recommendContainer,seasonContainer,pageFooter);
+}
 
 // Variable for login form
 const loginForm = document.querySelector('.loginBox form');
@@ -31,10 +39,10 @@ loginForm.addEventListener('submit',e=>{
     alert('Please input values in the fields below');
   }
   else{
-    hideElements(loginPage)
+    hideElements(loginPage,fakePageText)
     document.querySelector('#login-style').remove();
     showElements(navbar,recommendContainer,seasonContainer,pageFooter);
-
+    sessionStorage.setItem('login',true)
   }
 })
 

@@ -1,7 +1,7 @@
 # Ani-Fiend
 
 ## Description
-This project is a web app named **Ani-Fiend**,an anime application that can be used to viewthe current season's airing anime and the current top anime. One can also use it to find random animes.The app is created to satisfy a project for Moringa School.
+This project is a web app named **Ani-Fiend**,an anime application that can be used to viewthe current season's airing anime and the current top anime. One can also use it to find random animes.The app is created to satisfy a project for Moringa School and to gain experience using vanilla js to manipulate the views of the frontend.
 
 ## Technologies Used
 Notable technologies used in this project include:
